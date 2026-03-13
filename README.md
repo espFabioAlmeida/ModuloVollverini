@@ -1,5 +1,30 @@
 # Modulo Vollverini
 Projeto Automasensor: Módulo Vollverini - Haste <br>
+# Pinagem Conector
+1: GND <br>
+2: D+ OU CAN H <br>
+3: D- OU CAN L <br>
+4: NC <br>
+5: FIM DE LINHA (FECHAR COM O PINO 2) <br>
+6: SAIDA MOTOR 2 <br>
+7: SAIDA MOTOR 1 <br>
+8: VCC <br>
+9: GND <br>
+10: POTENCIÔMETRO (1K PARA O GND) <br>
+11: NC <br>
+12: IN4 <br>
+13: IN5 <br>
+14: SAIDA MOTOR 2 <br>
+15: SAIDA MOTOR 1 <br>
+16: VCC <br>
+17: GND <br>
+18: IN6 <br>
+19: IN1 <br>
+20: IN2 <br>
+21: IN3 <br>
+22: SAIDA MOTOR 2 <br>
+23: SAIDA MOTOR 1 <br>
+24: VCC <br>
 # Entradas Digitais
 IN1: Fim de curso subir <br>
 IN2: Fim de curso descer <br>
