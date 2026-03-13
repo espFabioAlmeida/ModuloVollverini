@@ -59,13 +59,13 @@ uint8_t
 
 	flagLedCOM = false;
 
-extern uint8_t
+uint8_t
 	sentidoMotor = MOTOR_DESLIGADO;
 
-extern uint32_t
+uint32_t
 	canTxMailbox;
 
-extern uint8_t
+uint8_t
 	canTxBuffer[8],
 	canRxBuffer[8];
 /* USER CODE END PV */
@@ -152,6 +152,9 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  entradasDigitais();
+	  acionamentoMotor();
+	  recebePacoteCAN();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -206,6 +209,11 @@ static void MX_CAN_Init(void)
 {
 
   /* USER CODE BEGIN CAN_Init 0 */
+	//calculo da configuração de velocidade
+	//http://www.bittiming.can-wiki.info/
+	//Selecionar ST e colocar a velocidade do clock (do APB1 ou do barramento correspondente a CAN)
+	//gerar tabela e pegar os calores de prescaler, seg1 e seg2
+	CAN_FilterTypeDef  sFilterConfig; //Inserido
 
   /* USER CODE END CAN_Init 0 */
 
@@ -409,6 +417,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : IN1_Pin IN2_Pin */
+  GPIO_InitStruct.Pin = IN1_Pin|IN2_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /* USER CODE BEGIN MX_GPIO_Init_2 */

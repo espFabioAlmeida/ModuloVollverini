@@ -35,6 +35,7 @@ Relé 2: Saída Descer <br>
 Monitora a rede CAN e aciona a saída conforme solicitado. <br>
 Não realiza nenhuma lógica na placa, apenas monitora as entradas digitais de fim de curso. <br>
 As entradas digitais de fim de curso são de uso OPCIONAL. Esse sinal deve ser colocado na VLV, que faz o controle completo. <br>
+NÃO FAZER UM BYPASS DA ENTRADA DA VLV COM A ENTRADA DO MODULO. SE PRECISAR USAR OS 2 SINAIS COLOCAR O SINAL DO SENSOR EM UM RELÉ EXTERNO PARA ACIONA A ENTRADA DA VOLLVERINI <br>
 # Protocolo CAN
 Endereço ECU Pacote 1: 0x1BB81A01 <br>
 Endereço ECU Pacote 2: 0x1BB81A02 <br>

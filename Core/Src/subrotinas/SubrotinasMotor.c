@@ -11,11 +11,11 @@ ACIONAMENTO MOTOR
 ==============================================================================*/
 void acionamentoMotor() {
 
-	if(flagEntradaFimCursoAbrir && sentidoMotor == MOTOR_ABRIR) {
+	if(flagEntradaFimCursoSubir && sentidoMotor == MOTOR_SUBIR) {
 		sentidoMotor = MOTOR_DESLIGADO;
 	}
 
-	if(flagEntradaFimCursoFechar && sentidoMotor == MOTOR_FECHAR) {
+	if(flagEntradaFimCursoDescer && sentidoMotor == MOTOR_DESCER) {
 		sentidoMotor = MOTOR_DESLIGADO;
 	}
 
@@ -25,13 +25,13 @@ void acionamentoMotor() {
 		return;
 	}
 
-	if(sentidoMotor == MOTOR_ABRIR) {
+	if(sentidoMotor == MOTOR_SUBIR) {
 		off(RELE2_GPIO_Port, RELE2_Pin);
 		on(RELE1_GPIO_Port, RELE1_Pin);
 		return;
 	}
 
-	if(sentidoMotor == MOTOR_FECHAR) {
+	if(sentidoMotor == MOTOR_DESCER) {
 		off(RELE1_GPIO_Port, RELE1_Pin);
 		on(RELE2_GPIO_Port, RELE2_Pin);
 		return;

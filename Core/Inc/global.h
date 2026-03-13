@@ -17,7 +17,8 @@ enum BOOL {
 enum MOTOR {
 	MOTOR_DESLIGADO,
 	MOTOR_SUBIR,
-	MOTOR_DESCER
+	MOTOR_DESCER,
+	MOTOR_RETORNO
 };
 
 extern CAN_HandleTypeDef hcan;

@@ -11,30 +11,30 @@ LEITURA DAS ENTRADAS DIGITAIS
 ==============================================================================*/
 void entradasDigitais() {
 
-	if(flagEntradaFimCursoAbrir) {
+	if(flagEntradaFimCursoSubir) {
 		if(debounce(IN1_GPIO_Port, IN1_Pin)) {
-			flagEntradaFimCursoAbrir = false;
+			flagEntradaFimCursoSubir = false;
 		}
 	}
 	else {
 		if(debounceInverso(IN1_GPIO_Port, IN1_Pin)) {
-			flagEntradaFimCursoAbrir = true;
+			flagEntradaFimCursoSubir = true;
 		}
 	}
 
-	if(flagEntradaFimCursoFechar) {
+	if(flagEntradaFimCursoDescer) {
 		if(debounce(IN2_GPIO_Port, IN2_Pin)) {
-			flagEntradaFimCursoFechar = false;
+			flagEntradaFimCursoDescer = false;
 		}
 	}
 	else {
 		if(debounceInverso(IN2_GPIO_Port, IN2_Pin)) {
-			flagEntradaFimCursoFechar = true;
+			flagEntradaFimCursoDescer = true;
 		}
 	}
 
-	setPin(LED1_GPIO_Port, LED1_Pin, flagEntradaFimCursoAbrir);
-	setPin(LED2_GPIO_Port, LED2_Pin, flagEntradaFimCursoFechar);
+	setPin(LED1_GPIO_Port, LED1_Pin, flagEntradaFimCursoSubir);
+	setPin(LED2_GPIO_Port, LED2_Pin, flagEntradaFimCursoDescer);
 }
 /*=============================================================================
 FIM DO ARQUIVO

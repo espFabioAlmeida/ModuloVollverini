@@ -10,7 +10,10 @@
 PROTOCOLO CAN
 ==============================================================================*/
 void protocoloCAN() {
-	sentidoMotor = 	canRxBuffer[1];
+	sentidoMotor = 	canRxBuffer[0];
+	if(sentidoMotor == MOTOR_RETORNO) {
+		sentidoMotor = MOTOR_SUBIR;
+	}
 }
 /*==============================================================================
 FIM DO ARQUIVO
